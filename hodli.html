@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Sonai! ❤️</title>
+    <style>
+        body {
+            background-color: #ffebf0;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #d63384;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px #ff1493;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 2px 2px 10px #ff66b2; }
+            to { text-shadow: 2px 2px 20px #ff1493; }
+        }
+        .heart-container {
+            position: relative;
+            height: 100vh;
+        }
+        .heart {
+            position: absolute;
+            color: #ff1493;
+            font-size: 2em;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(-100vh); }
+            to { transform: translateY(100vh); }
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .content img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            display: none; /* Hide images initially */
+        }
+        button {
+            background-color: #ff1493;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.5);
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #d63384;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-container">
+        <div class="content">
+            <img id="leftImage" src="img1.jpg" alt="Left Image">
+            <div>
+                <h1>Happy Valentine's Day, Sonai! ❤️</h1>
+                <p>You are the love of my life! 💖</p>
+                <button onclick="showLoveMessage()">Click for a Surprise! 💝</button>
+                <p id="loveMessage" style="display:none; font-size: 1em; margin-top: 20px; color: #c2185b;">
+                    In your eyes, my heart finds home,<br>
+                    With you, I am never alone.<br>
+                    I've found my love, my guiding star,<br>
+                    You shine so bright, near and far.<br><br>
+                    We were just kids, wild and free,<br>
+                    Chasing dreams, you and me.<br>
+                    Not knowing what love was all about,<br>
+                    But now I know, without a doubt.<br><br>
+                    Your heart is mine, my precious own,<br>
+                    In your eyes, my love is shown.<br>
+                    I'll hold your hand, through joy and strife,<br>
+                    Forever and always, my love, my life.<br><br>
+                    You're stronger than anyone I know,<br>
+                    Sharing dreams, and making them grow.<br>
+                    I've found a love that's real and true,<br>
+                    With you, Sonai, my heart beats anew.<br><br>
+                    We'll dance in the dark, under starry skies,<br>
+                    Listening to our favorite songs, with loving eyes.<br>
+                    You look perfect, in every single way,<br>
+                    Tonight, and forever, I'll love you, every day.<br><br>
+                    In your eyes, I see our future bright,<br>
+                    With you, my love, everything's just right.<br>
+                    I don't deserve this love so true,<br>
+                    But with you, Sonai, my heart beats anew.<br><br>
+                    You're my angel, my perfect find,<br>
+                    Forever and always, my love, my heart, my mind.<br>💘  
+                </p>
+            </div>
+            <img id="rightImage" src="img2.jpg" alt="Right Image">
+        </div>
+        
+        <audio id="bgMusic" loop>
+            <source src="perfect.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "💖";
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+
+        function showLoveMessage() {
+            document.getElementById("loveMessage").style.display = "block";
+            document.getElementById("leftImage").style.display = "block";
+            document.getElementById("rightImage").style.display = "block";
+            document.getElementById("bgMusic").play();
+        }
+    </script>
+
+</body>
+</html>
